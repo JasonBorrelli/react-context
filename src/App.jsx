@@ -9,7 +9,7 @@ function App() {
 
 
     const [temperature, setTemperature] = useState(20)
-    const cold = temperature < 18;
+    const cold = temperature < 20;
     const hot = temperature > 25;
 
 
@@ -37,10 +37,8 @@ function App() {
         
     }
 
-    function resetTemperature() {
-     
+    function resetTemperature() { 
         setTemperature(20)
-      
     } 
 
   return (
