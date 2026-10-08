@@ -6,19 +6,41 @@ import { useState } from "react"
 import TemperatureContext from "./components/context/TemperatureContext"
 
 function App() { 
+
+
     const [temperature, setTemperature] = useState(20)
+    const cold = temperature < 18;
+    const hot = temperature > 25;
 
 
+   
+   
+    function coldMode() {
+      if(cold) {
+        return "freddo"
+      } else if (hot) {
+        return "caldo"
+      } else {
+        return "Comfort"
+      }
+    }
+   
     function increaseTemperature() {
-        setTemperature(actual => (actual < 34 ? actual + 1 : actual))
+      
+        setTemperature(actual => (actual < 28 ? actual + 1 : actual))
+       
     } 
 
     function decreaseTemperature() {
+     
         setTemperature(actual => actual > 16 ? actual - 1 : actual)
+        
     }
 
     function resetTemperature() {
+     
         setTemperature(20)
+      
     } 
 
   return (
@@ -29,6 +51,8 @@ function App() {
             increaseTemperature,
             decreaseTemperature,
             resetTemperature,
+            coldMode,
+            
         }}>
         <div className="d-flex flex-grow-1 gap-3">
           <SideBar />
