@@ -1,10 +1,9 @@
-import { useContext } from "react"
-import TemperatureContext from "../context/TemperatureContext"
+import { useTemperatureContext } from "../context/TemperatureContext" 
 
 export default function FooterThermostatSection() {
 
-    const { temperature, coldMode } = useContext(TemperatureContext)
-
+    const { temperature, coldMode } = useTemperatureContext()  
+    
 
     return (
         <div className="badge text-bg-info d-flex align-items-center fs-5">

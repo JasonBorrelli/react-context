@@ -1,9 +1,8 @@
-import { useContext } from "react"
-import TemperatureContext from "../context/TemperatureContext"
+import { useTemperatureContext } from "../context/TemperatureContext" 
 
 export default function SideBar() {
-
-    const { resetTemperature } = useContext(TemperatureContext)
+    const { resetTemperature } = useTemperatureContext()
+    
 
     return (
         <aside className="w-25 px-3 border-end text-center mt-3">
